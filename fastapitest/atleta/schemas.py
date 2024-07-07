@@ -1,5 +1,5 @@
 from pydantic import Field, PositiveFloat
-from typing import Annotated
+from typing import Annotated, Optional
 from fastapitest.contrib.schemas import BaseSchema, OutMixin
 from fastapitest.categorias.schemas import CategoriaIn
 from fastapitest.centro_treinamento.schemas import CentroTreinamentoAtleta
@@ -19,3 +19,7 @@ class AtletaIn(Atleta):
 
 class AtletaOut(Atleta, OutMixin):
     pass
+
+class AtletaUpdate(BaseSchema):
+    nome: Annotated[str, Field(description="Nome do atleta", example="João", max_length=50)]
+    idade: Annotated[int, Field(description="Idade do atleta", example=25)]
