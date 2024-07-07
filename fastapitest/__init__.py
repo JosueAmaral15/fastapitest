@@ -1,0 +1,3 @@
+from fastapitest.categorias.models import CategoriaModel
+from fastapitest.centro_treinamento.models import CentroTreinamentoModel
+from fastapitest.atleta.models import AtletaModel
